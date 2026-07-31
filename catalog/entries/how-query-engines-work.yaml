@@ -1,0 +1,29 @@
+slug: how-query-engines-work
+title: How Query Engines Work
+summary: >-
+  A concise book, by a DataFusion co-creator, that builds a query engine step by
+  step: data sources, logical plans, expression evaluation, physical operators,
+  and a SQL front end.
+category: query-engines
+difficulty: intermediate
+languages:
+  - Kotlin
+estimatedHours: 25
+sourceUrl: https://howqueryengineswork.com/
+sourceType: book
+free: true
+openSource: true
+authors:
+  - Andy Grove
+prerequisites:
+  - JVM language basics (Kotlin or Java)
+  - Understanding of SQL
+learningOutcomes:
+  - Represent queries as logical and physical plans
+  - Evaluate expressions over columnar batches
+  - Implement joins, aggregates, and a simple optimizer
+tags:
+  - query-engine
+  - sql
+  - columnar
+lastVerified: '2026-07-27'

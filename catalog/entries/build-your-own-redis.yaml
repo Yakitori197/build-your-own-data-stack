@@ -1,0 +1,30 @@
+slug: build-your-own-redis
+title: Build Your Own Redis with C/C++
+summary: >-
+  An online book that recreates a Redis-like in-memory server from sockets up: an
+  event loop, the RESP protocol, hash tables, sorted sets, and TTL-based key
+  expiry.
+category: caches
+difficulty: intermediate
+languages:
+  - C
+  - C++
+estimatedHours: 20
+sourceUrl: https://build-your-own.org/redis/
+sourceType: book
+free: true
+openSource: false
+authors:
+  - James Smith
+prerequisites:
+  - C or C++ basics
+  - Comfort with pointers and sockets
+learningOutcomes:
+  - Build a non-blocking TCP event loop
+  - Parse the RESP wire protocol
+  - Implement core data structures and key expiry
+tags:
+  - cache
+  - key-value
+  - networking
+lastVerified: '2026-07-27'

@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Badge from '../components/Badge.astro';
+import T from '../components/T.astro';
+import { href } from '../lib/paths';
+import { loadCatalog } from '../../lib/catalog/load';
+import { entryBySlug } from '../../lib/catalog/query';
+
+const catalog = loadCatalog();
+const bySlug = entryBySlug(catalog);
+---
+
+<Base title="Learning paths · build-your-own-data-stack" active="paths">
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h1><T k="navPaths" /></h1>
+      </div>
+      <p class="lede">
+        <T
+          en="Ordered routes through the catalog. Each step builds on the one before it."
+          zh="穿越目錄的循序路線，每一步都建立在前一步之上。"
+        />
+      </p>
+
+      {
+        catalog.learningPaths.map((path) => (
+          <article class="path">
+            <h3>{path.title}</h3>
+            <div class="meta">
+              <Badge variant={path.difficulty} k={path.difficulty} swatch />
+              <span class="dot" aria-hidden="true" />
+              <span>
+                {path.steps.length} <T k="steps" />
+              </span>
+            </div>
+            <p>{path.summary}</p>
+            <ol class="path-steps">
+              {path.steps.map((step) => {
+                const entry = bySlug.get(step.slug);
+                return (
+                  <li>
+                    <div>
+                      {entry ? (
+                        <a href={href(`/entry/${entry.slug}`)}>{entry.title}</a>
+                      ) : (
+                        <span>{step.slug}</span>
+                      )}
+                      {step.note && <div class="step-note">{step.note}</div>}
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,29 @@
+slug: apache-parquet-format
+title: Apache Parquet File Format
+summary: >-
+  The official specification for Parquet's columnar layout, covering row groups,
+  column chunks, pages, encodings, and metadata, with enough detail to write your
+  own reader or writer.
+category: file-formats-parsers
+difficulty: advanced
+languages:
+  - Language-agnostic
+estimatedHours: 6
+sourceUrl: https://parquet.apache.org/docs/file-format/
+sourceType: reference
+free: true
+openSource: true
+authors:
+  - Apache Parquet
+prerequisites:
+  - Understanding of binary file formats
+  - Basic compression and encoding ideas
+learningOutcomes:
+  - Navigate row groups and column chunks
+  - Decode common Parquet encodings
+  - Read and write Parquet metadata
+tags:
+  - file-format
+  - columnar
+  - parquet
+lastVerified: '2026-07-27'

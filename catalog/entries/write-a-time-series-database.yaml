@@ -1,0 +1,29 @@
+slug: write-a-time-series-database
+title: Writing a Time Series Database from Scratch
+summary: >-
+  A hands-on tutorial that builds a time-series database engine in Go from the
+  ground up, covering an in-memory head block, partitioning by time, a
+  write-ahead log for durability, and querying by labels.
+category: storage-engines
+difficulty: advanced
+languages:
+  - Go
+estimatedHours: 8
+sourceUrl: https://nakabonne.dev/posts/write-tsdb-from-scratch/
+sourceType: tutorial
+free: true
+openSource: true
+authors:
+  - Ryo Nakao
+prerequisites:
+  - Comfort with Go
+  - Basic indexing concepts
+learningOutcomes:
+  - Model time-ordered samples in memory and on disk
+  - Partition data by time for efficient queries
+  - Use a write-ahead log for durability
+tags:
+  - time-series
+  - storage
+  - from-scratch
+lastVerified: '2026-07-27'

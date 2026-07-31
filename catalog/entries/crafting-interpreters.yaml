@@ -1,0 +1,29 @@
+slug: crafting-interpreters
+title: Crafting Interpreters
+summary: >-
+  A complete, free book that builds two interpreters for a small language; its
+  scanning and parsing chapters are a superb, practical grounding for writing any
+  file-format or query parser.
+category: file-formats-parsers
+difficulty: intermediate
+languages:
+  - Java
+  - C
+estimatedHours: 60
+sourceUrl: https://craftinginterpreters.com/
+sourceType: book
+free: true
+openSource: true
+authors:
+  - Robert Nystrom
+prerequisites:
+  - Comfort with an imperative language
+learningOutcomes:
+  - Write a scanner and tokenizer
+  - Build a recursive-descent parser
+  - Walk and evaluate an abstract syntax tree
+tags:
+  - parser
+  - tokenizer
+  - ast
+lastVerified: '2026-07-27'

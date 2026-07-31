@@ -1,0 +1,29 @@
+slug: sql-database-from-scratch
+title: Writing a SQL Database from Scratch
+summary: >-
+  A hands-on series that builds a tiny SQL engine in Go, with a lexer, a parser,
+  and an in-memory executor for SELECT, INSERT, and CREATE, explaining each layer
+  as it goes.
+category: query-engines
+difficulty: intermediate
+languages:
+  - Go
+estimatedHours: 10
+sourceUrl: https://notes.eatonphil.com/database-basics.html
+sourceType: series
+free: true
+openSource: true
+authors:
+  - Phil Eaton
+prerequisites:
+  - Basic Go
+  - Curiosity about how SQL runs
+learningOutcomes:
+  - Tokenize and parse SQL statements
+  - Model queries as an abstract syntax tree
+  - Execute queries against in-memory tables
+tags:
+  - sql
+  - parser
+  - query-engine
+lastVerified: '2026-07-27'

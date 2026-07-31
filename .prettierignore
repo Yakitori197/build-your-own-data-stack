@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+coverage/
+package-lock.json
+
+# Generated / marker-managed files (owned by scripts/generate.ts, not Prettier)
+public/api/catalog.json
+README.md
+CHANGELOG.md

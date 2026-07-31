@@ -1,0 +1,30 @@
+slug: cmu-15445-database-systems
+title: 'CMU 15-445: Database Systems'
+summary: >-
+  A university course whose projects have you implement the internals of a
+  disk-based database, including a buffer pool, a B+tree index, query operators,
+  and concurrency control, inside the BusTub teaching system.
+category: databases
+difficulty: advanced
+languages:
+  - C++
+estimatedHours: 120
+sourceUrl: https://15445.courses.cs.cmu.edu/
+sourceType: course
+free: true
+openSource: true
+authors:
+  - Andy Pavlo
+prerequisites:
+  - Solid C++
+  - Data structures and algorithms
+learningOutcomes:
+  - Build a buffer pool manager
+  - Implement a concurrent B+tree index
+  - Write query execution operators
+  - Add lock-based concurrency control
+tags:
+  - database
+  - query-execution
+  - concurrency
+lastVerified: '2026-07-27'

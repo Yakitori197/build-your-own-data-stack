@@ -1,0 +1,62 @@
+---
+import type { Category, Entry } from '../../lib/catalog/types';
+import { href } from '../lib/paths';
+import { formatHours, searchText } from '../lib/display';
+import T from './T.astro';
+import Badge from './Badge.astro';
+import ProgressButton from './ProgressButton.astro';
+
+interface Props {
+  entry: Entry;
+  category?: Category;
+}
+
+const { entry, category } = Astro.props;
+const languages = entry.languages.join(', ');
+---
+
+<article
+  class="card"
+  data-entry
+  data-slug={entry.slug}
+  data-category={entry.category}
+  data-difficulty={entry.difficulty}
+  data-languages={entry.languages.map((l) => l.toLowerCase()).join(',')}
+  data-hours={entry.estimatedHours}
+  data-free={entry.free ? '1' : '0'}
+  data-open={entry.openSource ? '1' : '0'}
+  data-text={searchText(entry)}
+>
+  {
+    category && (
+      <a class="cat-link" href={href(`/catalog?category=${category.id}`)}>
+        <T en={category.label.en} zh={category.label['zh-TW']} />
+      </a>
+    )
+  }
+  <h3>
+    <a href={href(`/entry/${entry.slug}`)}>{entry.title}</a>
+  </h3>
+  <p>{entry.summary}</p>
+  <ul class="tags" aria-label="tags">
+    {entry.tags.map((tag) => <li class="tag">#{tag}</li>)}
+  </ul>
+  <div class="meta">
+    <Badge variant={entry.difficulty} k={entry.difficulty} swatch />
+    <span class="dot" aria-hidden="true"></span>
+    <span>~{formatHours(entry.estimatedHours)} <T k="hours" /></span>
+    <span class="dot" aria-hidden="true"></span>
+    <span>{languages}</span>
+    <span class="dot" aria-hidden="true"></span>
+    <span>{entry.free ? <T k="free" /> : <T k="paid" />}</span>
+    {
+      entry.openSource && (
+        <>
+          <span class="dot" aria-hidden="true" />
+          <T k="openSource" />
+        </>
+      )
+    }
+  </div>
+  <ProgressButton slug={entry.slug} />
+</article>

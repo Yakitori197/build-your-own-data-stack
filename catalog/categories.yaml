@@ -1,0 +1,128 @@
+# Category metadata for build-your-own-data-stack.
+#
+# This file is the single source of truth for the learning categories. Each
+# entry in catalog/entries/*.yaml must reference one of these ids in its
+# `category` field. Labels and summaries are bilingual (English + Traditional
+# Chinese) because the site UI is bilingual. Order here is the display order.
+#
+# Content in this file is original and licensed CC BY 4.0 (see CONTENT_LICENSE.md).
+
+- id: file-formats-parsers
+  label:
+    en: File Formats & Parsers
+    zh-TW: 檔案格式與解析器
+  summary:
+    en: 'Turn raw bytes into structured records by parsing CSV, JSON, and binary formats by hand.'
+    zh-TW: '親手解析 CSV、JSON 與二進位格式，把原始位元組轉成結構化資料。'
+
+- id: storage-engines
+  label:
+    en: Storage Engines
+    zh-TW: 儲存引擎
+  summary:
+    en: 'The layer that actually puts bytes on disk: log-structured merge trees, B-trees, and page management.'
+    zh-TW: '真正把資料寫到磁碟的那一層：LSM-tree、B-tree 與頁面管理。'
+
+- id: indexes
+  label:
+    en: Indexes
+    zh-TW: 索引
+  summary:
+    en: 'Data structures that make lookups fast: hash indexes, B-trees, and LSM indexes.'
+    zh-TW: '讓查詢變快的資料結構：雜湊索引、B-tree 與 LSM 索引。'
+
+- id: query-engines
+  label:
+    en: Query Engines
+    zh-TW: 查詢引擎
+  summary:
+    en: 'Parse, plan, optimise, and execute queries over your data, from SQL text to a result set.'
+    zh-TW: '解析、規劃、最佳化並執行查詢：從 SQL 文字到結果集。'
+
+- id: databases
+  label:
+    en: Databases
+    zh-TW: 資料庫
+  summary:
+    en: 'Assemble storage, indexes, transactions, and a query layer into a working database.'
+    zh-TW: '把儲存、索引、交易與查詢層組裝成一個可運作的資料庫。'
+
+- id: caches
+  label:
+    en: Caches
+    zh-TW: 快取
+  summary:
+    en: 'Keep hot data close with eviction policies, TTLs, and write strategies.'
+    zh-TW: '用淘汰策略、TTL 與寫入策略把熱資料放在近處。'
+
+- id: message-queues
+  label:
+    en: Message Queues
+    zh-TW: 訊息佇列
+  summary:
+    en: 'Decouple producers from consumers with durable logs, delivery guarantees, and offsets.'
+    zh-TW: '用持久化日誌、傳遞保證與位移，把生產者與消費者解耦。'
+
+- id: stream-processing
+  label:
+    en: Stream Processing
+    zh-TW: 串流處理
+  summary:
+    en: 'Compute over unbounded data with windows, watermarks, state, and exactly-once semantics.'
+    zh-TW: '在無界資料上運算：視窗、浮水印、狀態與 exactly-once 語意。'
+
+- id: workflow-orchestration
+  label:
+    en: Workflow Orchestration
+    zh-TW: 工作流程編排
+  summary:
+    en: 'Schedule and coordinate multi-step pipelines with dependencies, retries, and backfills.'
+    zh-TW: '以相依關係、重試與回補，排程並協調多步驟管線。'
+
+- id: data-quality
+  label:
+    en: Data Quality
+    zh-TW: 資料品質
+  summary:
+    en: 'Assert what your data should look like with schema checks, constraints, and validation rules.'
+    zh-TW: '用 schema 檢查、約束與驗證規則，為資料立下應有的樣貌。'
+
+- id: data-observability
+  label:
+    en: Data Observability
+    zh-TW: 資料可觀測性
+  summary:
+    en: 'Detect freshness, volume, and distribution problems before your dashboards mislead you.'
+    zh-TW: '在儀表板誤導你之前，偵測新鮮度、資料量與分佈的問題。'
+
+- id: search-engines
+  label:
+    en: Search Engines
+    zh-TW: 搜尋引擎
+  summary:
+    en: 'Build inverted indexes, tokenizers, and ranking to search text at speed.'
+    zh-TW: '打造反向索引、斷詞器與排序，快速搜尋文字。'
+
+- id: vector-databases
+  label:
+    en: Vector Databases
+    zh-TW: 向量資料庫
+  summary:
+    en: 'Store embeddings and find nearest neighbours with approximate search structures.'
+    zh-TW: '儲存嵌入向量，並以近似搜尋結構找出最近鄰。'
+
+- id: data-warehouses
+  label:
+    en: Data Warehouses
+    zh-TW: 資料倉儲
+  summary:
+    en: 'Columnar storage, vectorised execution, and analytics at scale over large datasets.'
+    zh-TW: '欄式儲存、向量化執行，對大型資料集進行規模化分析。'
+
+- id: distributed-systems
+  label:
+    en: Distributed Systems
+    zh-TW: 分散式系統
+  summary:
+    en: 'Replication, consensus, partitioning, and fault tolerance across many machines.'
+    zh-TW: '在多台機器間處理複製、共識、分區與容錯。'

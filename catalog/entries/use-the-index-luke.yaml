@@ -1,0 +1,28 @@
+slug: use-the-index-luke
+title: Use the Index, Luke!
+summary: >-
+  A free web book that teaches how database indexes actually work by reasoning
+  about B-tree structure, then shows how query patterns, ordering, and joins
+  decide whether an index helps.
+category: indexes
+difficulty: beginner
+languages:
+  - SQL
+estimatedHours: 10
+sourceUrl: https://use-the-index-luke.com/
+sourceType: book
+free: true
+openSource: false
+authors:
+  - Markus Winand
+prerequisites:
+  - Basic SQL
+learningOutcomes:
+  - Explain how a B-tree index is traversed
+  - Design indexes for common query shapes
+  - Read execution plans to spot missing indexes
+tags:
+  - index
+  - b-tree
+  - performance
+lastVerified: '2026-07-27'

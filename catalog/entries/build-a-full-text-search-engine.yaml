@@ -1,0 +1,29 @@
+slug: build-a-full-text-search-engine
+title: Let's Build a Full-Text Search Engine
+summary: >-
+  A focused tutorial that indexes a large document set in Go by building an
+  inverted index with tokenization, filtering, and boolean queries, small enough
+  to read in one sitting.
+category: search-engines
+difficulty: intermediate
+languages:
+  - Go
+estimatedHours: 5
+sourceUrl: https://artem.krylysov.com/blog/2020/07/28/lets-build-a-full-text-search-engine/
+sourceType: tutorial
+free: true
+openSource: true
+authors:
+  - Artem Krylysov
+prerequisites:
+  - Basic Go
+  - Familiarity with maps and slices
+learningOutcomes:
+  - Tokenize and normalize text
+  - Build an inverted index
+  - Answer boolean full-text queries
+tags:
+  - search
+  - inverted-index
+  - full-text
+lastVerified: '2026-07-27'

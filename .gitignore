@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Test / coverage output
+coverage/
+*.lcov
+
+# Packaging artifacts
+*.tgz
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Environment files (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# Editor / OS / tooling noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.claude/
+
+# Temporary / report files
+tmp/
+.tmp/
+*.local

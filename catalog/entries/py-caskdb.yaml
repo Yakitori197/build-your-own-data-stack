@@ -1,0 +1,29 @@
+slug: py-caskdb
+title: 'py-caskdb: A Bitcask-style Key-Value Store'
+summary: >-
+  An educational project that implements a disk-based, log-structured key-value
+  store in Python following the Bitcask design, with a small codebase and
+  exercises to complete.
+category: storage-engines
+difficulty: beginner
+languages:
+  - Python
+estimatedHours: 8
+sourceUrl: https://github.com/avinassh/py-caskdb
+sourceType: project
+free: true
+openSource: true
+authors:
+  - Avinash Sajjanshetty
+prerequisites:
+  - Basic Python
+  - Understanding of dictionaries and files
+learningOutcomes:
+  - Append records to a log file
+  - Keep an in-memory key directory
+  - Read values back by file offset
+tags:
+  - key-value
+  - bitcask
+  - log-structured
+lastVerified: '2026-07-27'

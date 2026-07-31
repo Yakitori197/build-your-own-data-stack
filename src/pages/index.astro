@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import EntryCard from '../components/EntryCard.astro';
+import T from '../components/T.astro';
+import { href } from '../lib/paths';
+import { loadCatalog } from '../../lib/catalog/load';
+import {
+  allLanguages,
+  categoriesWithEntries,
+  countEntriesByCategory,
+  entryBySlug,
+} from '../../lib/catalog/query';
+import type { Entry } from '../../lib/catalog/types';
+
+const catalog = loadCatalog();
+const counts = countEntriesByCategory(catalog);
+const languages = allLanguages(catalog);
+const bySlug = entryBySlug(catalog);
+const catById = new Map(catalog.categories.map((c) => [c.id, c]));
+
+const featured: Entry[] = [];
+const seen = new Set<string>();
+for (const path of catalog.learningPaths) {
+  const first = path.steps[0];
+  if (!first || seen.has(first.slug)) continue;
+  const entry = bySlug.get(first.slug);
+  if (entry) {
+    seen.add(entry.slug);
+    featured.push(entry);
+  }
+}
+---
+
+<Base title="build-your-own-data-stack" active="home">
+  <section class="hero">
+    <div class="container">
+      <h1><T k="tagline" /></h1>
+      <p class="lede"><T k="heroBody" /></p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href={href('/catalog')}><T k="browseCatalog" /></a>
+        <a class="btn" href={href('/paths')}><T k="viewPaths" /></a>
+      </div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">{catalog.entries.length}</div>
+          <div class="lbl"><T k="entries" /></div>
+        </div>
+        <div class="stat">
+          <div class="num">{categoriesWithEntries(catalog)}</div>
+          <div class="lbl"><T k="categories" /></div>
+        </div>
+        <div class="stat">
+          <div class="num">{languages.length}</div>
+          <div class="lbl"><T k="languages" /></div>
+        </div>
+        <div class="stat">
+          <div class="num">{catalog.learningPaths.length}</div>
+          <div class="lbl"><T k="paths" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2><T k="featured" /></h2>
+        <a href={href('/paths')}><T k="viewPaths" /> →</a>
+      </div>
+      <div class="card-grid">
+        {
+          featured.map((entry) => (
+            <EntryCard entry={entry} category={catById.get(entry.category)} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2><T k="browseByCategory" /></h2>
+        <a href={href('/catalog')}><T k="browseCatalog" /> →</a>
+      </div>
+      <div class="card-grid">
+        {
+          catalog.categories.map((category) => (
+            <CategoryCard category={category} count={counts.get(category.id) ?? 0} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>

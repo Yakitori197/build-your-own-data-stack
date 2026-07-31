@@ -1,0 +1,67 @@
+# Ordered learning paths. Each step references an entry slug in
+# catalog/entries/. Keep steps in the order a learner should tackle them.
+# Original content, licensed CC BY 4.0 (see CONTENT_LICENSE.md).
+
+- slug: from-file-parser-to-query-engine
+  title: From File Parser to Query Engine
+  summary: >-
+    Start by turning bytes into structured data, then work up to planning and
+    executing queries over it. A path from parsing to a working query engine.
+  difficulty: intermediate
+  tags:
+    - query-engine
+    - parser
+    - file-format
+  steps:
+    - slug: crafting-interpreters
+      note: Learn to scan and parse text into a syntax tree.
+    - slug: apache-parquet-format
+      note: See how a real columnar format lays out data on disk.
+    - slug: how-query-engines-work
+      note: Turn parsed queries into logical and physical plans.
+    - slug: sql-database-from-scratch
+      note: Put lexer, parser, and executor together over real tables.
+
+- slug: from-key-value-store-to-distributed-database
+  title: From Key-Value Store to Distributed Database
+  summary: >-
+    Begin with a single-node store, evolve it into a durable storage engine, then
+    replicate it across machines with consensus. A path from one key to many
+    nodes.
+  difficulty: advanced
+  tags:
+    - storage
+    - distributed-systems
+    - replication
+  steps:
+    - slug: py-caskdb
+      note: Build a single-node, log-structured key-value store.
+    - slug: mini-lsm-storage-engine
+      note: Upgrade storage to an LSM tree with compaction.
+    - slug: build-your-own-redis
+      note: Add a network protocol and in-memory data structures.
+    - slug: raft-consensus
+      note: Learn the consensus algorithm that keeps replicas in sync.
+    - slug: mit-6824-distributed-systems
+      note: Implement a replicated, sharded key-value store on Raft.
+
+- slug: from-event-log-to-stream-processor
+  title: From Event Log to Stream Processor
+  summary: >-
+    Treat an append-only log as the source of truth, then compute derived views
+    over it as data keeps arriving. A path from logging events to processing
+    streams.
+  difficulty: intermediate
+  tags:
+    - streaming
+    - event-log
+    - message-queue
+  steps:
+    - slug: the-log-real-time-data
+      note: Understand the log as a unifying abstraction.
+    - slug: streaming-101
+      note: Learn windowing, event time, and watermarks.
+    - slug: turning-the-database-inside-out
+      note: Reframe views and caches as stream transformations.
+    - slug: write-a-time-series-database
+      note: Store time-ordered data efficiently for querying.

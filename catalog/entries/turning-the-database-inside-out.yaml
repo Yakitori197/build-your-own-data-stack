@@ -1,0 +1,28 @@
+slug: turning-the-database-inside-out
+title: Turning the Database Inside-Out
+summary: >-
+  A talk-turned-article that reframes materialized views, caches, and indexes as
+  derived data kept in sync by an event log, the core idea behind log-based stream
+  processing.
+category: stream-processing
+difficulty: intermediate
+languages:
+  - Language-agnostic
+estimatedHours: 2
+sourceUrl: https://martin.kleppmann.com/2015/03/04/turning-the-database-inside-out.html
+sourceType: article
+free: true
+openSource: false
+authors:
+  - Martin Kleppmann
+prerequisites:
+  - Basic databases knowledge
+learningOutcomes:
+  - See derived data as stream transformations
+  - Understand log-centric architectures
+  - Relate change data capture to materialized views
+tags:
+  - streaming
+  - event-log
+  - cdc
+lastVerified: '2026-07-27'

@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/T.astro';
+import { href } from '../lib/paths';
+---
+
+<Base title="Page not found · build-your-own-data-stack">
+  <section class="hero">
+    <div class="container">
+      <h1><T k="notFound" /></h1>
+      <p class="lede"><T k="notFoundBody" /></p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href={href('/')}><T k="backHome" /></a>
+        <a class="btn" href={href('/catalog')}><T k="browseCatalog" /></a>
+      </div>
+    </div>
+  </section>
+</Base>

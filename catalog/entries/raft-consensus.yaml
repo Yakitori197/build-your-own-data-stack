@@ -1,0 +1,29 @@
+slug: raft-consensus
+title: 'Raft: Understandable Consensus'
+summary: >-
+  The Raft home page gathers the paper, talks, and an interactive visualization
+  that walk through leader election, log replication, and safety, the pieces you
+  need to implement consensus yourself.
+category: distributed-systems
+difficulty: advanced
+languages:
+  - Language-agnostic
+estimatedHours: 30
+sourceUrl: https://raft.github.io/
+sourceType: interactive
+free: true
+openSource: true
+authors:
+  - Diego Ongaro
+  - John Ousterhout
+prerequisites:
+  - Basic distributed systems vocabulary
+learningOutcomes:
+  - Explain leader election and terms
+  - Trace log replication and commitment
+  - Understand safety and membership changes
+tags:
+  - consensus
+  - raft
+  - replication
+lastVerified: '2026-07-27'

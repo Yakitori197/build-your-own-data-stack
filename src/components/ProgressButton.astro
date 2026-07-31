@@ -1,0 +1,27 @@
+---
+/**
+ * A "mark as done" toggle. The four possible labels (todo/done × en/zh) are
+ * carried on data-* attributes; the client script (src/scripts/site.ts) sets the
+ * visible label from the completion state and the active language, and keeps
+ * aria-pressed in sync. Progress lives only in localStorage and is never sent
+ * anywhere.
+ */
+import { UI } from '../i18n/ui';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+---
+
+<button type="button" class="btn progress-btn" data-progress-toggle={slug} aria-pressed="false">
+  <span class="check-icon" aria-hidden="true">✓ </span>
+  <span
+    class="progress-label"
+    data-todo-en={UI.markDone.en}
+    data-todo-zh={UI.markDone['zh-TW']}
+    data-done-en={UI.done.en}
+    data-done-zh={UI.done['zh-TW']}>{UI.markDone.en}</span
+  >
+</button>

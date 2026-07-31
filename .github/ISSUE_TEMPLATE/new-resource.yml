@@ -1,0 +1,102 @@
+name: 📚 Suggest a resource
+description: Propose a hands-on resource to add to the catalog.
+title: 'resource: <title>'
+labels: ['new-resource']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a resource! Please make sure it is real, public,
+        and reachable over HTTPS. See the
+        [content guidelines](../blob/main/docs/content-guidelines.md).
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The resource's title.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Source URL (HTTPS)
+      description: Must be HTTPS and free of tracking parameters.
+      placeholder: https://example.com/great-tutorial
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - File Formats & Parsers
+        - Storage Engines
+        - Indexes
+        - Query Engines
+        - Databases
+        - Caches
+        - Message Queues
+        - Stream Processing
+        - Workflow Orchestration
+        - Data Quality
+        - Data Observability
+        - Search Engines
+        - Vector Databases
+        - Data Warehouses
+        - Distributed Systems
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      options: [beginner, intermediate, advanced]
+    validations:
+      required: true
+  - type: input
+    id: languages
+    attributes:
+      label: Languages
+      description: Comma-separated. Use "Language-agnostic" for concept/paper resources.
+      placeholder: Go, Rust
+    validations:
+      required: true
+  - type: input
+    id: hours
+    attributes:
+      label: Estimated hours
+      placeholder: '12'
+    validations:
+      required: true
+  - type: dropdown
+    id: free
+    attributes:
+      label: Is it free to access?
+      options: ['Yes (free)', 'No (paid)']
+    validations:
+      required: true
+  - type: dropdown
+    id: open-source
+    attributes:
+      label: Is the accompanying code open source?
+      options: ['Yes', 'No']
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary (in your own words)
+      description: One or two sentences. Do not copy the source's own description.
+    validations:
+      required: true
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Confirmation
+      options:
+        - label: The link is HTTPS and free of tracking parameters.
+          required: true
+        - label: My summary is written in my own words.
+          required: true
+        - label: I agree to license my summary under CC BY 4.0.
+          required: true

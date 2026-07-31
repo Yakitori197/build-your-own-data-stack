@@ -1,0 +1,19 @@
+---
+import T from './T.astro';
+import type { UIKey } from '../i18n/ui';
+
+interface Props {
+  variant?: 'beginner' | 'intermediate' | 'advanced';
+  k?: UIKey;
+  en?: string;
+  zh?: string;
+  swatch?: boolean;
+}
+
+const { variant, k, en, zh, swatch = false } = Astro.props;
+---
+
+<span class={variant ? `badge badge--${variant}` : 'badge'}>
+  {swatch && <span class="swatch" aria-hidden="true" />}
+  <T k={k} en={en} zh={zh} />
+</span>

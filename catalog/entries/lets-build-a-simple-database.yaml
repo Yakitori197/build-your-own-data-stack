@@ -1,0 +1,28 @@
+slug: lets-build-a-simple-database
+title: Let's Build a Simple Database
+summary: >-
+  A step-by-step series that grows a SQLite-style database in C, one commit at a
+  time, from a REPL and pager to a B-tree stored on disk.
+category: databases
+difficulty: intermediate
+languages:
+  - C
+estimatedHours: 15
+sourceUrl: https://cstack.github.io/db_tutorial/
+sourceType: series
+free: true
+openSource: true
+authors:
+  - Connor Stack
+prerequisites:
+  - Comfortable writing and compiling C
+  - Basic data structures
+learningOutcomes:
+  - Implement a REPL and a simple command parser
+  - Store rows in a paged file on disk
+  - Build a B-tree for lookups and inserts
+tags:
+  - database
+  - b-tree
+  - from-scratch
+lastVerified: '2026-07-27'

@@ -1,0 +1,21 @@
+---
+import type { Category } from '../../lib/catalog/types';
+import { href } from '../lib/paths';
+import T from './T.astro';
+
+interface Props {
+  category: Category;
+  count: number;
+}
+
+const { category, count } = Astro.props;
+---
+
+<a class="card" href={href(`/catalog?category=${category.id}`)}>
+  <span class="cat-link">
+    <T en={`${count}`} zh={`${count}`} />
+    &nbsp;<T k="entries" />
+  </span>
+  <h3><T en={category.label.en} zh={category.label['zh-TW']} /></h3>
+  <p><T en={category.summary.en} zh={category.summary['zh-TW']} /></p>
+</a>

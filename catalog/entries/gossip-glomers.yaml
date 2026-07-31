@@ -1,0 +1,30 @@
+slug: gossip-glomers
+title: 'Gossip Glomers: Distributed Systems Challenges'
+summary: >-
+  A set of hands-on challenges built on the Maelstrom test harness where you
+  implement broadcast, a grow-only counter, and a replicated log, then have your
+  solutions stress-tested against failures.
+category: distributed-systems
+difficulty: intermediate
+languages:
+  - Go
+estimatedHours: 20
+sourceUrl: https://fly.io/dist-sys/
+sourceType: interactive
+free: true
+openSource: true
+authors:
+  - Fly.io
+  - Kyle Kingsbury
+prerequisites:
+  - A JVM installed for Maelstrom
+  - Any language with stdin and stdout (Go recommended)
+learningOutcomes:
+  - Implement reliable broadcast
+  - Handle network partitions and retries
+  - Reason about consistency under failures
+tags:
+  - distributed-systems
+  - testing
+  - broadcast
+lastVerified: '2026-07-27'

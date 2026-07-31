@@ -1,0 +1,159 @@
+---
+import Base from '../../layouts/Base.astro';
+import Badge from '../../components/Badge.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import ProgressButton from '../../components/ProgressButton.astro';
+import T from '../../components/T.astro';
+import { href } from '../../lib/paths';
+import { formatHours } from '../../lib/display';
+import { loadCatalog } from '../../../lib/catalog/load';
+import type { Category, Entry } from '../../../lib/catalog/types';
+
+export function getStaticPaths() {
+  const catalog = loadCatalog();
+  const catById = new Map(catalog.categories.map((c) => [c.id, c]));
+  return catalog.entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: {
+      entry,
+      category: catById.get(entry.category) ?? null,
+      related: catalog.entries
+        .filter((e) => e.category === entry.category && e.slug !== entry.slug)
+        .slice(0, 3),
+    },
+  }));
+}
+
+interface Props {
+  entry: Entry;
+  category: Category | null;
+  related: Entry[];
+}
+
+const { entry, category, related } = Astro.props;
+---
+
+<Base title={`${entry.title} · build-your-own-data-stack`} description={entry.summary}>
+  <section class="detail-header">
+    <div class="container">
+      <p class="breadcrumb">
+        <a href={href('/catalog')}><T k="navCatalog" /></a>
+        {
+          category && (
+            <>
+              {' / '}
+              <a href={href(`/catalog?category=${category.id}`)}>
+                <T en={category.label.en} zh={category.label['zh-TW']} />
+              </a>
+            </>
+          )
+        }
+      </p>
+      <h1>{entry.title}</h1>
+      <div class="meta">
+        <Badge variant={entry.difficulty} k={entry.difficulty} swatch />
+        <span class="dot" aria-hidden="true"></span>
+        <span>~{formatHours(entry.estimatedHours)} <T k="hours" /></span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>{entry.free ? <T k="free" /> : <T k="paid" />}</span>
+        {
+          entry.openSource && (
+            <>
+              <>
+                <span class="dot" aria-hidden="true" />
+                <T k="openSource" />
+              </>
+            </>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container detail-grid">
+      <div>
+        <h2><T k="overview" /></h2>
+        <p>{entry.summary}</p>
+
+        <h2><T k="learningOutcomes" /></h2>
+        <ul class="outcomes">
+          {entry.learningOutcomes.map((outcome) => <li>{outcome}</li>)}
+        </ul>
+
+        {
+          entry.prerequisites.length > 0 && (
+            <>
+              <h2>
+                <T k="prerequisites" />
+              </h2>
+              <ul class="prereqs">
+                {entry.prerequisites.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </>
+          )
+        }
+
+        <ul class="tags" aria-label="tags">
+          {entry.tags.map((tag) => <li class="tag">#{tag}</li>)}
+        </ul>
+      </div>
+
+      <aside class="detail-aside" aria-label="Resource details">
+        <a
+          class="btn btn--primary"
+          href={entry.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <T k="source" /> ↗
+        </a>
+        <ProgressButton slug={entry.slug} />
+
+        <dl style="margin-top:16px;">
+          <dt><T k="difficulty" /></dt>
+          <dd><T k={entry.difficulty} /></dd>
+          <dt><T k="estimatedTime" /></dt>
+          <dd>~{formatHours(entry.estimatedHours)} <T k="hours" /></dd>
+          <dt><T k="language" /></dt>
+          <dd>{entry.languages.join(', ')}</dd>
+          <dt><T k="sourceType" /></dt>
+          <dd>{entry.sourceType}</dd>
+          {
+            entry.authors && entry.authors.length > 0 && (
+              <>
+                <dt>
+                  <T k="authors" />
+                </dt>
+                <dd>{entry.authors.join(', ')}</dd>
+              </>
+            )
+          }
+          <dt><T k="lastVerified" /></dt>
+          <dd>{entry.lastVerified}</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  {
+    related.length > 0 && (
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <h2>
+              <T k="inThisCategory" />
+            </h2>
+          </div>
+          <div class="card-grid">
+            {related.map((item) => (
+              <EntryCard entry={item} category={category ?? undefined} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+</Base>

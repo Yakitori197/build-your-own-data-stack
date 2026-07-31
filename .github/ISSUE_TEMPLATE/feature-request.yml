@@ -1,0 +1,23 @@
+name: 💡 Idea or feature request
+description: Suggest an improvement to the site, tooling, or learning paths.
+title: 'idea: <summary>'
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false

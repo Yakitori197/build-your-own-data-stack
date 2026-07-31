@@ -1,0 +1,29 @@
+slug: mini-lsm-storage-engine
+title: 'Mini-LSM: Build a Storage Engine in a Week'
+summary: >-
+  A guided tutorial that builds an LSM-tree storage engine in Rust from the ground
+  up, including memtables, SSTables, compaction, bloom filters, and MVCC, with
+  tests for each milestone.
+category: storage-engines
+difficulty: advanced
+languages:
+  - Rust
+estimatedHours: 40
+sourceUrl: https://skyzh.github.io/mini-lsm/
+sourceType: tutorial
+free: true
+openSource: true
+authors:
+  - Alex Chi Z
+prerequisites:
+  - Intermediate Rust
+  - Familiarity with trees and sorting
+learningOutcomes:
+  - Implement memtables and immutable SSTables
+  - Build leveled compaction
+  - Add bloom filters and MVCC snapshots
+tags:
+  - lsm-tree
+  - storage
+  - compaction
+lastVerified: '2026-07-27'

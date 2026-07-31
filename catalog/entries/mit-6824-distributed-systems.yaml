@@ -1,0 +1,29 @@
+slug: mit-6824-distributed-systems
+title: 'MIT 6.824: Distributed Systems'
+summary: >-
+  A graduate course whose lab series has you build a fault-tolerant, replicated
+  key-value store in Go, starting from MapReduce, through a full Raft
+  implementation, to a sharded service.
+category: distributed-systems
+difficulty: advanced
+languages:
+  - Go
+estimatedHours: 100
+sourceUrl: https://pdos.csail.mit.edu/6.824/
+sourceType: course
+free: true
+openSource: false
+authors:
+  - MIT PDOS
+prerequisites:
+  - Strong Go or systems programming
+  - Concurrency fundamentals
+learningOutcomes:
+  - Implement MapReduce
+  - Build Raft leader election and log replication
+  - Layer a replicated key-value store and sharding on Raft
+tags:
+  - distributed-systems
+  - raft
+  - replication
+lastVerified: '2026-07-27'

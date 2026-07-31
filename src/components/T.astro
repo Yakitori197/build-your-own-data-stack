@@ -1,0 +1,20 @@
+---
+/**
+ * Renders a bilingual UI string. The English text is rendered into the HTML so
+ * the page is fully usable with no JavaScript; the client script swaps in the
+ * Chinese text (from data-zh) when the reader selects 中文.
+ */
+import { UI, type UIKey } from '../i18n/ui';
+
+interface Props {
+  k?: UIKey;
+  en?: string;
+  zh?: string;
+}
+
+const { k, en: enProp, zh: zhProp } = Astro.props;
+const en = k ? UI[k].en : (enProp ?? '');
+const zh = k ? UI[k]['zh-TW'] : (zhProp ?? '');
+---
+
+<span data-en={en} data-zh={zh}>{en}</span>

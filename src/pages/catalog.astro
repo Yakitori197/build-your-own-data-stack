@@ -1,0 +1,141 @@
+---
+import Base from '../layouts/Base.astro';
+import EntryCard from '../components/EntryCard.astro';
+import T from '../components/T.astro';
+import { loadCatalog } from '../../lib/catalog/load';
+import { allLanguages } from '../../lib/catalog/query';
+import { UI } from '../i18n/ui';
+
+const catalog = loadCatalog();
+const catById = new Map(catalog.categories.map((c) => [c.id, c]));
+const languages = allLanguages(catalog);
+const total = catalog.entries.length;
+
+const hourOptions = [
+  { value: '5', en: '≤ 5 hours', zh: '≤ 5 小時' },
+  { value: '10', en: '≤ 10 hours', zh: '≤ 10 小時' },
+  { value: '25', en: '≤ 25 hours', zh: '≤ 25 小時' },
+  { value: '50', en: '≤ 50 hours', zh: '≤ 50 小時' },
+  { value: '100', en: '≤ 100 hours', zh: '≤ 100 小時' },
+  { value: '200', en: '≤ 200 hours', zh: '≤ 200 小時' },
+];
+const difficulties = ['beginner', 'intermediate', 'advanced'] as const;
+---
+
+<Base title="Catalog · build-your-own-data-stack" active="catalog">
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h1><T k="navCatalog" /></h1>
+        <p>
+          <T k="progressLabel" />: <strong data-progress-count>0</strong> / {total}
+        </p>
+      </div>
+
+      <form class="filters" data-filters aria-label="Filter resources">
+        <div class="filter-group">
+          <label for="f-search"><T k="search" /></label>
+          <input
+            type="search"
+            id="f-search"
+            data-filter="search"
+            placeholder={UI.searchPlaceholder.en}
+            data-ph-en={UI.searchPlaceholder.en}
+            data-ph-zh={UI.searchPlaceholder['zh-TW']}
+            autocomplete="off"
+          />
+        </div>
+        <div class="filter-group">
+          <label for="f-category"><T k="category" /></label>
+          <select id="f-category" data-filter="category">
+            <option value="" data-en={UI.all.en} data-zh={UI.all['zh-TW']}>{UI.all.en}</option>
+            {
+              catalog.categories.map((c) => (
+                <option value={c.id} data-en={c.label.en} data-zh={c.label['zh-TW']}>
+                  {c.label.en}
+                </option>
+              ))
+            }
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-difficulty"><T k="difficulty" /></label>
+          <select id="f-difficulty" data-filter="difficulty">
+            <option value="" data-en={UI.any.en} data-zh={UI.any['zh-TW']}>{UI.any.en}</option>
+            {
+              difficulties.map((d) => (
+                <option value={d} data-en={UI[d].en} data-zh={UI[d]['zh-TW']}>
+                  {UI[d].en}
+                </option>
+              ))
+            }
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-language"><T k="language" /></label>
+          <select id="f-language" data-filter="language">
+            <option value="" data-en={UI.any.en} data-zh={UI.any['zh-TW']}>{UI.any.en}</option>
+            {languages.map((lang) => <option value={lang.toLowerCase()}>{lang}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="f-hours"><T k="maxHours" /></label>
+          <select id="f-hours" data-filter="hours">
+            <option value="" data-en={UI.any.en} data-zh={UI.any['zh-TW']}>{UI.any.en}</option>
+            {
+              hourOptions.map((o) => (
+                <option value={o.value} data-en={o.en} data-zh={o.zh}>
+                  {o.en}
+                </option>
+              ))
+            }
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-group" aria-hidden="true"></span>
+          <div class="filter-checks">
+            <label class="check">
+              <input type="checkbox" data-filter="free" /><T k="freeOnly" />
+            </label>
+            <label class="check">
+              <input type="checkbox" data-filter="open" /><T k="openSourceOnly" />
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <div class="results-bar">
+        <p aria-live="polite">
+          <T k="showing" />
+          <strong data-visible-count>{total}</strong>
+          <T k="of" />
+          <strong>{total}</strong>
+        </p>
+        <button type="button" class="btn" data-reset><T k="reset" /></button>
+      </div>
+
+      <div class="card-grid" data-results>
+        {
+          catalog.entries.map((entry) => (
+            <EntryCard entry={entry} category={catById.get(entry.category)} />
+          ))
+        }
+      </div>
+
+      <div class="empty-state" data-empty hidden>
+        <T k="noResults" />
+      </div>
+
+      <script
+        is:inline
+        type="application/json"
+        data-known-slugs
+        set:html={JSON.stringify(catalog.entries.map((entry) => entry.slug))}
+      />
+    </div>
+  </section>
+
+  <script>
+    import '../scripts/catalog.ts';
+  </script>
+</Base>

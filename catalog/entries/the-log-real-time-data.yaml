@@ -1,0 +1,28 @@
+slug: the-log-real-time-data
+title: 'Apache Kafka: Design and the Commit Log'
+summary: >-
+  Kafka's design documentation explains the partitioned, append-only commit log
+  at its core, including offsets, replication, and delivery guarantees, the
+  foundation for building a durable message queue yourself.
+category: message-queues
+difficulty: intermediate
+languages:
+  - Language-agnostic
+estimatedHours: 4
+sourceUrl: https://kafka.apache.org/documentation/#design
+sourceType: reference
+free: true
+openSource: true
+authors:
+  - Apache Kafka
+prerequisites:
+  - Basic understanding of databases and messaging
+learningOutcomes:
+  - Model a topic as a partitioned, append-only log
+  - Reason about offsets, retention, and replayability
+  - Compare at-least-once and exactly-once delivery
+tags:
+  - message-queue
+  - log
+  - kafka
+lastVerified: '2026-07-27'

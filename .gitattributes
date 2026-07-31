@@ -1,0 +1,7 @@
+# Normalise line endings to LF for all text files on every platform. This keeps
+# the deterministic-generation check (git diff) stable on Windows CI runners.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary

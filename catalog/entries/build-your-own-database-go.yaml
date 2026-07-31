@@ -1,0 +1,28 @@
+slug: build-your-own-database-go
+title: Build Your Own Database From Scratch (Go)
+summary: >-
+  An online book that builds a persistent, copy-on-write B+tree database in Go,
+  then layers a relational-style query interface and transactions on top.
+category: databases
+difficulty: advanced
+languages:
+  - Go
+estimatedHours: 25
+sourceUrl: https://build-your-own.org/database/
+sourceType: book
+free: true
+openSource: false
+authors:
+  - James Smith
+prerequisites:
+  - Working knowledge of Go
+  - Familiarity with file I/O
+learningOutcomes:
+  - Design an append-friendly B+tree on disk
+  - Implement crash-safe updates with copy-on-write
+  - Add tables, indexes, and simple transactions
+tags:
+  - database
+  - b-tree
+  - storage
+lastVerified: '2026-07-27'

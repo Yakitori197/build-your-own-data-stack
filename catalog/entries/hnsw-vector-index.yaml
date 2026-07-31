@@ -1,0 +1,30 @@
+slug: hnsw-vector-index
+title: 'HNSW: Hierarchical Navigable Small World Graphs'
+summary: >-
+  The paper introducing HNSW, the graph index behind most modern vector
+  databases, a clear specification you can follow to implement fast approximate
+  nearest-neighbor search.
+category: vector-databases
+difficulty: advanced
+languages:
+  - Language-agnostic
+estimatedHours: 12
+sourceUrl: https://arxiv.org/abs/1603.09320
+sourceType: paper
+free: true
+openSource: false
+authors:
+  - Yury Malkov
+  - Dmitry Yashunin
+prerequisites:
+  - Graphs and probability basics
+  - Comfort reading research papers
+learningOutcomes:
+  - Understand navigable small-world graphs
+  - Implement layered HNSW insertion and search
+  - Tune the recall versus latency trade-off
+tags:
+  - vector-search
+  - ann
+  - hnsw
+lastVerified: '2026-07-27'

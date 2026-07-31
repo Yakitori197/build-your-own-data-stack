@@ -1,0 +1,29 @@
+slug: cmu-15721-advanced-database-systems
+title: 'CMU 15-721: Advanced Database Systems'
+summary: >-
+  A course focused on the internals of modern analytical databases: columnar
+  storage, vectorized and compiled execution, and query optimization, the
+  building blocks of a data warehouse engine.
+category: data-warehouses
+difficulty: advanced
+languages:
+  - C++
+estimatedHours: 60
+sourceUrl: https://15721.courses.cs.cmu.edu/
+sourceType: course
+free: true
+openSource: false
+authors:
+  - Andy Pavlo
+prerequisites:
+  - A first databases course
+  - Strong systems programming
+learningOutcomes:
+  - Design columnar storage layouts
+  - Compare vectorized and compiled execution
+  - Reason about analytical query optimization
+tags:
+  - data-warehouse
+  - columnar
+  - vectorized-execution
+lastVerified: '2026-07-27'

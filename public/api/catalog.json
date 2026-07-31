@@ -1,0 +1,1024 @@
+{
+  "categories": [
+    {
+      "entryCount": 2,
+      "id": "file-formats-parsers",
+      "label": {
+        "en": "File Formats & Parsers",
+        "zh-TW": "檔案格式與解析器"
+      },
+      "summary": {
+        "en": "Turn raw bytes into structured records by parsing CSV, JSON, and binary formats by hand.",
+        "zh-TW": "親手解析 CSV、JSON 與二進位格式，把原始位元組轉成結構化資料。"
+      }
+    },
+    {
+      "entryCount": 3,
+      "id": "storage-engines",
+      "label": {
+        "en": "Storage Engines",
+        "zh-TW": "儲存引擎"
+      },
+      "summary": {
+        "en": "The layer that actually puts bytes on disk: log-structured merge trees, B-trees, and page management.",
+        "zh-TW": "真正把資料寫到磁碟的那一層：LSM-tree、B-tree 與頁面管理。"
+      }
+    },
+    {
+      "entryCount": 1,
+      "id": "indexes",
+      "label": {
+        "en": "Indexes",
+        "zh-TW": "索引"
+      },
+      "summary": {
+        "en": "Data structures that make lookups fast: hash indexes, B-trees, and LSM indexes.",
+        "zh-TW": "讓查詢變快的資料結構：雜湊索引、B-tree 與 LSM 索引。"
+      }
+    },
+    {
+      "entryCount": 2,
+      "id": "query-engines",
+      "label": {
+        "en": "Query Engines",
+        "zh-TW": "查詢引擎"
+      },
+      "summary": {
+        "en": "Parse, plan, optimise, and execute queries over your data, from SQL text to a result set.",
+        "zh-TW": "解析、規劃、最佳化並執行查詢：從 SQL 文字到結果集。"
+      }
+    },
+    {
+      "entryCount": 3,
+      "id": "databases",
+      "label": {
+        "en": "Databases",
+        "zh-TW": "資料庫"
+      },
+      "summary": {
+        "en": "Assemble storage, indexes, transactions, and a query layer into a working database.",
+        "zh-TW": "把儲存、索引、交易與查詢層組裝成一個可運作的資料庫。"
+      }
+    },
+    {
+      "entryCount": 1,
+      "id": "caches",
+      "label": {
+        "en": "Caches",
+        "zh-TW": "快取"
+      },
+      "summary": {
+        "en": "Keep hot data close with eviction policies, TTLs, and write strategies.",
+        "zh-TW": "用淘汰策略、TTL 與寫入策略把熱資料放在近處。"
+      }
+    },
+    {
+      "entryCount": 1,
+      "id": "message-queues",
+      "label": {
+        "en": "Message Queues",
+        "zh-TW": "訊息佇列"
+      },
+      "summary": {
+        "en": "Decouple producers from consumers with durable logs, delivery guarantees, and offsets.",
+        "zh-TW": "用持久化日誌、傳遞保證與位移，把生產者與消費者解耦。"
+      }
+    },
+    {
+      "entryCount": 2,
+      "id": "stream-processing",
+      "label": {
+        "en": "Stream Processing",
+        "zh-TW": "串流處理"
+      },
+      "summary": {
+        "en": "Compute over unbounded data with windows, watermarks, state, and exactly-once semantics.",
+        "zh-TW": "在無界資料上運算：視窗、浮水印、狀態與 exactly-once 語意。"
+      }
+    },
+    {
+      "entryCount": 0,
+      "id": "workflow-orchestration",
+      "label": {
+        "en": "Workflow Orchestration",
+        "zh-TW": "工作流程編排"
+      },
+      "summary": {
+        "en": "Schedule and coordinate multi-step pipelines with dependencies, retries, and backfills.",
+        "zh-TW": "以相依關係、重試與回補，排程並協調多步驟管線。"
+      }
+    },
+    {
+      "entryCount": 0,
+      "id": "data-quality",
+      "label": {
+        "en": "Data Quality",
+        "zh-TW": "資料品質"
+      },
+      "summary": {
+        "en": "Assert what your data should look like with schema checks, constraints, and validation rules.",
+        "zh-TW": "用 schema 檢查、約束與驗證規則，為資料立下應有的樣貌。"
+      }
+    },
+    {
+      "entryCount": 0,
+      "id": "data-observability",
+      "label": {
+        "en": "Data Observability",
+        "zh-TW": "資料可觀測性"
+      },
+      "summary": {
+        "en": "Detect freshness, volume, and distribution problems before your dashboards mislead you.",
+        "zh-TW": "在儀表板誤導你之前，偵測新鮮度、資料量與分佈的問題。"
+      }
+    },
+    {
+      "entryCount": 1,
+      "id": "search-engines",
+      "label": {
+        "en": "Search Engines",
+        "zh-TW": "搜尋引擎"
+      },
+      "summary": {
+        "en": "Build inverted indexes, tokenizers, and ranking to search text at speed.",
+        "zh-TW": "打造反向索引、斷詞器與排序，快速搜尋文字。"
+      }
+    },
+    {
+      "entryCount": 1,
+      "id": "vector-databases",
+      "label": {
+        "en": "Vector Databases",
+        "zh-TW": "向量資料庫"
+      },
+      "summary": {
+        "en": "Store embeddings and find nearest neighbours with approximate search structures.",
+        "zh-TW": "儲存嵌入向量，並以近似搜尋結構找出最近鄰。"
+      }
+    },
+    {
+      "entryCount": 1,
+      "id": "data-warehouses",
+      "label": {
+        "en": "Data Warehouses",
+        "zh-TW": "資料倉儲"
+      },
+      "summary": {
+        "en": "Columnar storage, vectorised execution, and analytics at scale over large datasets.",
+        "zh-TW": "欄式儲存、向量化執行，對大型資料集進行規模化分析。"
+      }
+    },
+    {
+      "entryCount": 4,
+      "id": "distributed-systems",
+      "label": {
+        "en": "Distributed Systems",
+        "zh-TW": "分散式系統"
+      },
+      "summary": {
+        "en": "Replication, consensus, partitioning, and fault tolerance across many machines.",
+        "zh-TW": "在多台機器間處理複製、共識、分區與容錯。"
+      }
+    }
+  ],
+  "counts": {
+    "categories": 15,
+    "categoriesWithEntries": 12,
+    "entries": 22,
+    "languages": 9,
+    "learningPaths": 3
+  },
+  "entries": [
+    {
+      "authors": [
+        "Apache Parquet"
+      ],
+      "category": "file-formats-parsers",
+      "difficulty": "advanced",
+      "estimatedHours": 6,
+      "free": true,
+      "languages": [
+        "Language-agnostic"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Navigate row groups and column chunks",
+        "Decode common Parquet encodings",
+        "Read and write Parquet metadata"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Understanding of binary file formats",
+        "Basic compression and encoding ideas"
+      ],
+      "slug": "apache-parquet-format",
+      "sourceType": "reference",
+      "sourceUrl": "https://parquet.apache.org/docs/file-format/",
+      "summary": "The official specification for Parquet's columnar layout, covering row groups, column chunks, pages, encodings, and metadata, with enough detail to write your own reader or writer.",
+      "tags": [
+        "file-format",
+        "columnar",
+        "parquet"
+      ],
+      "title": "Apache Parquet File Format"
+    },
+    {
+      "authors": [
+        "Artem Krylysov"
+      ],
+      "category": "search-engines",
+      "difficulty": "intermediate",
+      "estimatedHours": 5,
+      "free": true,
+      "languages": [
+        "Go"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Tokenize and normalize text",
+        "Build an inverted index",
+        "Answer boolean full-text queries"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Basic Go",
+        "Familiarity with maps and slices"
+      ],
+      "slug": "build-a-full-text-search-engine",
+      "sourceType": "tutorial",
+      "sourceUrl": "https://artem.krylysov.com/blog/2020/07/28/lets-build-a-full-text-search-engine/",
+      "summary": "A focused tutorial that indexes a large document set in Go by building an inverted index with tokenization, filtering, and boolean queries, small enough to read in one sitting.",
+      "tags": [
+        "search",
+        "inverted-index",
+        "full-text"
+      ],
+      "title": "Let's Build a Full-Text Search Engine"
+    },
+    {
+      "authors": [
+        "James Smith"
+      ],
+      "category": "databases",
+      "difficulty": "advanced",
+      "estimatedHours": 25,
+      "free": true,
+      "languages": [
+        "Go"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Design an append-friendly B+tree on disk",
+        "Implement crash-safe updates with copy-on-write",
+        "Add tables, indexes, and simple transactions"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "Working knowledge of Go",
+        "Familiarity with file I/O"
+      ],
+      "slug": "build-your-own-database-go",
+      "sourceType": "book",
+      "sourceUrl": "https://build-your-own.org/database/",
+      "summary": "An online book that builds a persistent, copy-on-write B+tree database in Go, then layers a relational-style query interface and transactions on top.",
+      "tags": [
+        "database",
+        "b-tree",
+        "storage"
+      ],
+      "title": "Build Your Own Database From Scratch (Go)"
+    },
+    {
+      "authors": [
+        "James Smith"
+      ],
+      "category": "caches",
+      "difficulty": "intermediate",
+      "estimatedHours": 20,
+      "free": true,
+      "languages": [
+        "C",
+        "C++"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Build a non-blocking TCP event loop",
+        "Parse the RESP wire protocol",
+        "Implement core data structures and key expiry"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "C or C++ basics",
+        "Comfort with pointers and sockets"
+      ],
+      "slug": "build-your-own-redis",
+      "sourceType": "book",
+      "sourceUrl": "https://build-your-own.org/redis/",
+      "summary": "An online book that recreates a Redis-like in-memory server from sockets up: an event loop, the RESP protocol, hash tables, sorted sets, and TTL-based key expiry.",
+      "tags": [
+        "cache",
+        "key-value",
+        "networking"
+      ],
+      "title": "Build Your Own Redis with C/C++"
+    },
+    {
+      "authors": [
+        "Andy Pavlo"
+      ],
+      "category": "databases",
+      "difficulty": "advanced",
+      "estimatedHours": 120,
+      "free": true,
+      "languages": [
+        "C++"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Build a buffer pool manager",
+        "Implement a concurrent B+tree index",
+        "Write query execution operators",
+        "Add lock-based concurrency control"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Solid C++",
+        "Data structures and algorithms"
+      ],
+      "slug": "cmu-15445-database-systems",
+      "sourceType": "course",
+      "sourceUrl": "https://15445.courses.cs.cmu.edu/",
+      "summary": "A university course whose projects have you implement the internals of a disk-based database, including a buffer pool, a B+tree index, query operators, and concurrency control, inside the BusTub teaching system.",
+      "tags": [
+        "database",
+        "query-execution",
+        "concurrency"
+      ],
+      "title": "CMU 15-445: Database Systems"
+    },
+    {
+      "authors": [
+        "Andy Pavlo"
+      ],
+      "category": "data-warehouses",
+      "difficulty": "advanced",
+      "estimatedHours": 60,
+      "free": true,
+      "languages": [
+        "C++"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Design columnar storage layouts",
+        "Compare vectorized and compiled execution",
+        "Reason about analytical query optimization"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "A first databases course",
+        "Strong systems programming"
+      ],
+      "slug": "cmu-15721-advanced-database-systems",
+      "sourceType": "course",
+      "sourceUrl": "https://15721.courses.cs.cmu.edu/",
+      "summary": "A course focused on the internals of modern analytical databases: columnar storage, vectorized and compiled execution, and query optimization, the building blocks of a data warehouse engine.",
+      "tags": [
+        "data-warehouse",
+        "columnar",
+        "vectorized-execution"
+      ],
+      "title": "CMU 15-721: Advanced Database Systems"
+    },
+    {
+      "authors": [
+        "Robert Nystrom"
+      ],
+      "category": "file-formats-parsers",
+      "difficulty": "intermediate",
+      "estimatedHours": 60,
+      "free": true,
+      "languages": [
+        "Java",
+        "C"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Write a scanner and tokenizer",
+        "Build a recursive-descent parser",
+        "Walk and evaluate an abstract syntax tree"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Comfort with an imperative language"
+      ],
+      "slug": "crafting-interpreters",
+      "sourceType": "book",
+      "sourceUrl": "https://craftinginterpreters.com/",
+      "summary": "A complete, free book that builds two interpreters for a small language; its scanning and parsing chapters are a superb, practical grounding for writing any file-format or query parser.",
+      "tags": [
+        "parser",
+        "tokenizer",
+        "ast"
+      ],
+      "title": "Crafting Interpreters"
+    },
+    {
+      "authors": [
+        "Martin Kleppmann"
+      ],
+      "category": "distributed-systems",
+      "difficulty": "intermediate",
+      "estimatedHours": 40,
+      "free": false,
+      "languages": [
+        "Language-agnostic"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Compare storage and replication strategies",
+        "Reason about consistency and consensus trade-offs",
+        "Choose partitioning and transaction models"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "General software engineering experience"
+      ],
+      "slug": "designing-data-intensive-applications",
+      "sourceType": "book",
+      "sourceUrl": "https://dataintensive.net/",
+      "summary": "A widely used reference that maps the whole landscape, from storage engines and replication to partitioning, transactions, and consensus, giving you the mental models to design and rebuild data systems.",
+      "tags": [
+        "distributed-systems",
+        "replication",
+        "transactions"
+      ],
+      "title": "Designing Data-Intensive Applications"
+    },
+    {
+      "authors": [
+        "Fly.io",
+        "Kyle Kingsbury"
+      ],
+      "category": "distributed-systems",
+      "difficulty": "intermediate",
+      "estimatedHours": 20,
+      "free": true,
+      "languages": [
+        "Go"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Implement reliable broadcast",
+        "Handle network partitions and retries",
+        "Reason about consistency under failures"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "A JVM installed for Maelstrom",
+        "Any language with stdin and stdout (Go recommended)"
+      ],
+      "slug": "gossip-glomers",
+      "sourceType": "interactive",
+      "sourceUrl": "https://fly.io/dist-sys/",
+      "summary": "A set of hands-on challenges built on the Maelstrom test harness where you implement broadcast, a grow-only counter, and a replicated log, then have your solutions stress-tested against failures.",
+      "tags": [
+        "distributed-systems",
+        "testing",
+        "broadcast"
+      ],
+      "title": "Gossip Glomers: Distributed Systems Challenges"
+    },
+    {
+      "authors": [
+        "Yury Malkov",
+        "Dmitry Yashunin"
+      ],
+      "category": "vector-databases",
+      "difficulty": "advanced",
+      "estimatedHours": 12,
+      "free": true,
+      "languages": [
+        "Language-agnostic"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Understand navigable small-world graphs",
+        "Implement layered HNSW insertion and search",
+        "Tune the recall versus latency trade-off"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "Graphs and probability basics",
+        "Comfort reading research papers"
+      ],
+      "slug": "hnsw-vector-index",
+      "sourceType": "paper",
+      "sourceUrl": "https://arxiv.org/abs/1603.09320",
+      "summary": "The paper introducing HNSW, the graph index behind most modern vector databases, a clear specification you can follow to implement fast approximate nearest-neighbor search.",
+      "tags": [
+        "vector-search",
+        "ann",
+        "hnsw"
+      ],
+      "title": "HNSW: Hierarchical Navigable Small World Graphs"
+    },
+    {
+      "authors": [
+        "Andy Grove"
+      ],
+      "category": "query-engines",
+      "difficulty": "intermediate",
+      "estimatedHours": 25,
+      "free": true,
+      "languages": [
+        "Kotlin"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Represent queries as logical and physical plans",
+        "Evaluate expressions over columnar batches",
+        "Implement joins, aggregates, and a simple optimizer"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "JVM language basics (Kotlin or Java)",
+        "Understanding of SQL"
+      ],
+      "slug": "how-query-engines-work",
+      "sourceType": "book",
+      "sourceUrl": "https://howqueryengineswork.com/",
+      "summary": "A concise book, by a DataFusion co-creator, that builds a query engine step by step: data sources, logical plans, expression evaluation, physical operators, and a SQL front end.",
+      "tags": [
+        "query-engine",
+        "sql",
+        "columnar"
+      ],
+      "title": "How Query Engines Work"
+    },
+    {
+      "authors": [
+        "Connor Stack"
+      ],
+      "category": "databases",
+      "difficulty": "intermediate",
+      "estimatedHours": 15,
+      "free": true,
+      "languages": [
+        "C"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Implement a REPL and a simple command parser",
+        "Store rows in a paged file on disk",
+        "Build a B-tree for lookups and inserts"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Comfortable writing and compiling C",
+        "Basic data structures"
+      ],
+      "slug": "lets-build-a-simple-database",
+      "sourceType": "series",
+      "sourceUrl": "https://cstack.github.io/db_tutorial/",
+      "summary": "A step-by-step series that grows a SQLite-style database in C, one commit at a time, from a REPL and pager to a B-tree stored on disk.",
+      "tags": [
+        "database",
+        "b-tree",
+        "from-scratch"
+      ],
+      "title": "Let's Build a Simple Database"
+    },
+    {
+      "authors": [
+        "Alex Chi Z"
+      ],
+      "category": "storage-engines",
+      "difficulty": "advanced",
+      "estimatedHours": 40,
+      "free": true,
+      "languages": [
+        "Rust"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Implement memtables and immutable SSTables",
+        "Build leveled compaction",
+        "Add bloom filters and MVCC snapshots"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Intermediate Rust",
+        "Familiarity with trees and sorting"
+      ],
+      "slug": "mini-lsm-storage-engine",
+      "sourceType": "tutorial",
+      "sourceUrl": "https://skyzh.github.io/mini-lsm/",
+      "summary": "A guided tutorial that builds an LSM-tree storage engine in Rust from the ground up, including memtables, SSTables, compaction, bloom filters, and MVCC, with tests for each milestone.",
+      "tags": [
+        "lsm-tree",
+        "storage",
+        "compaction"
+      ],
+      "title": "Mini-LSM: Build a Storage Engine in a Week"
+    },
+    {
+      "authors": [
+        "MIT PDOS"
+      ],
+      "category": "distributed-systems",
+      "difficulty": "advanced",
+      "estimatedHours": 100,
+      "free": true,
+      "languages": [
+        "Go"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Implement MapReduce",
+        "Build Raft leader election and log replication",
+        "Layer a replicated key-value store and sharding on Raft"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "Strong Go or systems programming",
+        "Concurrency fundamentals"
+      ],
+      "slug": "mit-6824-distributed-systems",
+      "sourceType": "course",
+      "sourceUrl": "https://pdos.csail.mit.edu/6.824/",
+      "summary": "A graduate course whose lab series has you build a fault-tolerant, replicated key-value store in Go, starting from MapReduce, through a full Raft implementation, to a sharded service.",
+      "tags": [
+        "distributed-systems",
+        "raft",
+        "replication"
+      ],
+      "title": "MIT 6.824: Distributed Systems"
+    },
+    {
+      "authors": [
+        "Avinash Sajjanshetty"
+      ],
+      "category": "storage-engines",
+      "difficulty": "beginner",
+      "estimatedHours": 8,
+      "free": true,
+      "languages": [
+        "Python"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Append records to a log file",
+        "Keep an in-memory key directory",
+        "Read values back by file offset"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Basic Python",
+        "Understanding of dictionaries and files"
+      ],
+      "slug": "py-caskdb",
+      "sourceType": "project",
+      "sourceUrl": "https://github.com/avinassh/py-caskdb",
+      "summary": "An educational project that implements a disk-based, log-structured key-value store in Python following the Bitcask design, with a small codebase and exercises to complete.",
+      "tags": [
+        "key-value",
+        "bitcask",
+        "log-structured"
+      ],
+      "title": "py-caskdb: A Bitcask-style Key-Value Store"
+    },
+    {
+      "authors": [
+        "Diego Ongaro",
+        "John Ousterhout"
+      ],
+      "category": "distributed-systems",
+      "difficulty": "advanced",
+      "estimatedHours": 30,
+      "free": true,
+      "languages": [
+        "Language-agnostic"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Explain leader election and terms",
+        "Trace log replication and commitment",
+        "Understand safety and membership changes"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Basic distributed systems vocabulary"
+      ],
+      "slug": "raft-consensus",
+      "sourceType": "interactive",
+      "sourceUrl": "https://raft.github.io/",
+      "summary": "The Raft home page gathers the paper, talks, and an interactive visualization that walk through leader election, log replication, and safety, the pieces you need to implement consensus yourself.",
+      "tags": [
+        "consensus",
+        "raft",
+        "replication"
+      ],
+      "title": "Raft: Understandable Consensus"
+    },
+    {
+      "authors": [
+        "Phil Eaton"
+      ],
+      "category": "query-engines",
+      "difficulty": "intermediate",
+      "estimatedHours": 10,
+      "free": true,
+      "languages": [
+        "Go"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Tokenize and parse SQL statements",
+        "Model queries as an abstract syntax tree",
+        "Execute queries against in-memory tables"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Basic Go",
+        "Curiosity about how SQL runs"
+      ],
+      "slug": "sql-database-from-scratch",
+      "sourceType": "series",
+      "sourceUrl": "https://notes.eatonphil.com/database-basics.html",
+      "summary": "A hands-on series that builds a tiny SQL engine in Go, with a lexer, a parser, and an in-memory executor for SELECT, INSERT, and CREATE, explaining each layer as it goes.",
+      "tags": [
+        "sql",
+        "parser",
+        "query-engine"
+      ],
+      "title": "Writing a SQL Database from Scratch"
+    },
+    {
+      "authors": [
+        "Tyler Akidau"
+      ],
+      "category": "stream-processing",
+      "difficulty": "intermediate",
+      "estimatedHours": 3,
+      "free": true,
+      "languages": [
+        "Language-agnostic"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Distinguish event time from processing time",
+        "Choose windowing strategies",
+        "Reason about watermarks and completeness"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "Basic data pipeline concepts"
+      ],
+      "slug": "streaming-101",
+      "sourceType": "article",
+      "sourceUrl": "https://www.oreilly.com/radar/the-world-beyond-batch-streaming-101/",
+      "summary": "A foundational two-part essay that untangles streaming vocabulary, including event versus processing time, windowing, watermarks, and triggers, the concepts any stream processor must get right.",
+      "tags": [
+        "streaming",
+        "windowing",
+        "watermarks"
+      ],
+      "title": "Streaming 101: The World Beyond Batch"
+    },
+    {
+      "authors": [
+        "Apache Kafka"
+      ],
+      "category": "message-queues",
+      "difficulty": "intermediate",
+      "estimatedHours": 4,
+      "free": true,
+      "languages": [
+        "Language-agnostic"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Model a topic as a partitioned, append-only log",
+        "Reason about offsets, retention, and replayability",
+        "Compare at-least-once and exactly-once delivery"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Basic understanding of databases and messaging"
+      ],
+      "slug": "the-log-real-time-data",
+      "sourceType": "reference",
+      "sourceUrl": "https://kafka.apache.org/documentation/#design",
+      "summary": "Kafka's design documentation explains the partitioned, append-only commit log at its core, including offsets, replication, and delivery guarantees, the foundation for building a durable message queue yourself.",
+      "tags": [
+        "message-queue",
+        "log",
+        "kafka"
+      ],
+      "title": "Apache Kafka: Design and the Commit Log"
+    },
+    {
+      "authors": [
+        "Martin Kleppmann"
+      ],
+      "category": "stream-processing",
+      "difficulty": "intermediate",
+      "estimatedHours": 2,
+      "free": true,
+      "languages": [
+        "Language-agnostic"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "See derived data as stream transformations",
+        "Understand log-centric architectures",
+        "Relate change data capture to materialized views"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "Basic databases knowledge"
+      ],
+      "slug": "turning-the-database-inside-out",
+      "sourceType": "article",
+      "sourceUrl": "https://martin.kleppmann.com/2015/03/04/turning-the-database-inside-out.html",
+      "summary": "A talk-turned-article that reframes materialized views, caches, and indexes as derived data kept in sync by an event log, the core idea behind log-based stream processing.",
+      "tags": [
+        "streaming",
+        "event-log",
+        "cdc"
+      ],
+      "title": "Turning the Database Inside-Out"
+    },
+    {
+      "authors": [
+        "Markus Winand"
+      ],
+      "category": "indexes",
+      "difficulty": "beginner",
+      "estimatedHours": 10,
+      "free": true,
+      "languages": [
+        "SQL"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Explain how a B-tree index is traversed",
+        "Design indexes for common query shapes",
+        "Read execution plans to spot missing indexes"
+      ],
+      "openSource": false,
+      "prerequisites": [
+        "Basic SQL"
+      ],
+      "slug": "use-the-index-luke",
+      "sourceType": "book",
+      "sourceUrl": "https://use-the-index-luke.com/",
+      "summary": "A free web book that teaches how database indexes actually work by reasoning about B-tree structure, then shows how query patterns, ordering, and joins decide whether an index helps.",
+      "tags": [
+        "index",
+        "b-tree",
+        "performance"
+      ],
+      "title": "Use the Index, Luke!"
+    },
+    {
+      "authors": [
+        "Ryo Nakao"
+      ],
+      "category": "storage-engines",
+      "difficulty": "advanced",
+      "estimatedHours": 8,
+      "free": true,
+      "languages": [
+        "Go"
+      ],
+      "lastVerified": "2026-07-27",
+      "learningOutcomes": [
+        "Model time-ordered samples in memory and on disk",
+        "Partition data by time for efficient queries",
+        "Use a write-ahead log for durability"
+      ],
+      "openSource": true,
+      "prerequisites": [
+        "Comfort with Go",
+        "Basic indexing concepts"
+      ],
+      "slug": "write-a-time-series-database",
+      "sourceType": "tutorial",
+      "sourceUrl": "https://nakabonne.dev/posts/write-tsdb-from-scratch/",
+      "summary": "A hands-on tutorial that builds a time-series database engine in Go from the ground up, covering an in-memory head block, partitioning by time, a write-ahead log for durability, and querying by labels.",
+      "tags": [
+        "time-series",
+        "storage",
+        "from-scratch"
+      ],
+      "title": "Writing a Time Series Database from Scratch"
+    }
+  ],
+  "generator": "build-your-own-data-stack",
+  "languages": [
+    "C",
+    "C++",
+    "Go",
+    "Java",
+    "Kotlin",
+    "Language-agnostic",
+    "Python",
+    "Rust",
+    "SQL"
+  ],
+  "learningPaths": [
+    {
+      "difficulty": "intermediate",
+      "slug": "from-file-parser-to-query-engine",
+      "steps": [
+        {
+          "note": "Learn to scan and parse text into a syntax tree.",
+          "slug": "crafting-interpreters"
+        },
+        {
+          "note": "See how a real columnar format lays out data on disk.",
+          "slug": "apache-parquet-format"
+        },
+        {
+          "note": "Turn parsed queries into logical and physical plans.",
+          "slug": "how-query-engines-work"
+        },
+        {
+          "note": "Put lexer, parser, and executor together over real tables.",
+          "slug": "sql-database-from-scratch"
+        }
+      ],
+      "summary": "Start by turning bytes into structured data, then work up to planning and executing queries over it. A path from parsing to a working query engine.",
+      "tags": [
+        "query-engine",
+        "parser",
+        "file-format"
+      ],
+      "title": "From File Parser to Query Engine"
+    },
+    {
+      "difficulty": "advanced",
+      "slug": "from-key-value-store-to-distributed-database",
+      "steps": [
+        {
+          "note": "Build a single-node, log-structured key-value store.",
+          "slug": "py-caskdb"
+        },
+        {
+          "note": "Upgrade storage to an LSM tree with compaction.",
+          "slug": "mini-lsm-storage-engine"
+        },
+        {
+          "note": "Add a network protocol and in-memory data structures.",
+          "slug": "build-your-own-redis"
+        },
+        {
+          "note": "Learn the consensus algorithm that keeps replicas in sync.",
+          "slug": "raft-consensus"
+        },
+        {
+          "note": "Implement a replicated, sharded key-value store on Raft.",
+          "slug": "mit-6824-distributed-systems"
+        }
+      ],
+      "summary": "Begin with a single-node store, evolve it into a durable storage engine, then replicate it across machines with consensus. A path from one key to many nodes.",
+      "tags": [
+        "storage",
+        "distributed-systems",
+        "replication"
+      ],
+      "title": "From Key-Value Store to Distributed Database"
+    },
+    {
+      "difficulty": "intermediate",
+      "slug": "from-event-log-to-stream-processor",
+      "steps": [
+        {
+          "note": "Understand the log as a unifying abstraction.",
+          "slug": "the-log-real-time-data"
+        },
+        {
+          "note": "Learn windowing, event time, and watermarks.",
+          "slug": "streaming-101"
+        },
+        {
+          "note": "Reframe views and caches as stream transformations.",
+          "slug": "turning-the-database-inside-out"
+        },
+        {
+          "note": "Store time-ordered data efficiently for querying.",
+          "slug": "write-a-time-series-database"
+        }
+      ],
+      "summary": "Treat an append-only log as the source of truth, then compute derived views over it as data keeps arriving. A path from logging events to processing streams.",
+      "tags": [
+        "streaming",
+        "event-log",
+        "message-queue"
+      ],
+      "title": "From Event Log to Stream Processor"
+    }
+  ],
+  "version": 1
+}

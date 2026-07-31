@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import T from '../components/T.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  active?: 'home' | 'catalog' | 'paths';
+}
+
+const {
+  title,
+  description = 'Learn data infrastructure by rebuilding it from first principles. A curated, hands-on learning map.',
+  active,
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const href = (path: string): string => `${base.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href={href('favicon.svg')} type="image/svg+xml" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main"><T en="Skip to content" zh="跳到主要內容" /></a>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href={href('/')} aria-label="build-your-own-data-stack home">
+          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="var(--accent)"></rect>
+            <g
+              fill="none"
+              stroke="var(--accent-contrast)"
+              stroke-width="2.2"
+              stroke-linejoin="round"
+            >
+              <path d="M16 6 L26 11 L16 16 L6 11 Z"></path>
+              <path d="M6 16 L16 21 L26 16"></path>
+              <path d="M6 21 L16 26 L26 21"></path>
+            </g>
+          </svg>
+          <span>build-your-own-data-stack</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href={href('/')} aria-current={active === 'home' ? 'page' : undefined}>
+            <T k="navHome" />
+          </a>
+          <a href={href('/catalog')} aria-current={active === 'catalog' ? 'page' : undefined}>
+            <T k="navCatalog" />
+          </a>
+          <a href={href('/paths')} aria-current={active === 'paths' ? 'page' : undefined}>
+            <T k="navPaths" />
+          </a>
+          <div class="lang-toggle" role="group" aria-label="Language / 語言">
+            <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+            <button type="button" data-lang-btn="zh-TW" aria-pressed="false">中文</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>
+          <T en="Code: MIT · Content: CC BY 4.0" zh="程式碼：MIT · 內容：CC BY 4.0" />
+        </span>
+        <span><T k="privacyNote" /></span>
+      </div>
+    </footer>
+
+    <script>
+      import '../scripts/site.ts';
+    </script>
+  </body>
+</html>
