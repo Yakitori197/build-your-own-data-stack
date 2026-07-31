@@ -33,7 +33,7 @@
     "links:check": "tsx scripts/check-links.ts"
   },
   "dependencies": {
-    "astro": "^7.1.3",
+    "astro": "^7.1.4",
     "yaml": "^2.9.0",
     "zod": "^4.4.3"
   },
